@@ -7,9 +7,10 @@
 	--color-primary: var(--primary);
 	--color-primary-foreground: var(--primary-foreground);
 	--color-border: var(--border);
-	--font-sans: Arial, Helvetica, sans-serif;
+	--font-sans: var(--font-mayo-sans);
 }
 :root {
+	--font-mayo-sans: 'mayo-sans', Arial, Helvetica, sans-serif;
 	--background: #fff;
 	--foreground: #102938;
 	--primary: #0057bf;
@@ -36,7 +37,7 @@ html {
 body {
 	margin: 0;
 	color: var(--ink);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-mayo-sans);
 	font-size: 16px;
 	line-height: 1.5;
 }
@@ -238,7 +239,7 @@ p {
 	margin: 0;
 }
 h1 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-mayo-sans);
 	font-weight: 400;
 	font-size: clamp(45px, 4.6vw, 72px);
 	line-height: 1.1;
@@ -384,7 +385,7 @@ em {
 	margin-bottom: 45px;
 }
 .section-heading h2 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-mayo-sans);
 	font-weight: 400;
 	font-size: clamp(36px, 3.4vw, 51px);
 	line-height: 1.13;
@@ -438,7 +439,7 @@ em {
 }
 .feature-copy h3 {
 	font-size: 39px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-mayo-sans);
 	line-height: 1.15;
 	font-weight: 400;
 	letter-spacing: -1px;
@@ -541,7 +542,7 @@ em {
 	color: var(--blue);
 }
 .card-body h3 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-mayo-sans);
 	font-size: 27px;
 	font-weight: 400;
 	line-height: 1.22;
@@ -608,10 +609,7 @@ em {
 	font-size: 10px;
 }
 .closing h2 {
-	font:
-		400 55px/1.08 Arial,
-		Helvetica,
-		sans-serif;
+	font: 400 55px/1.08 var(--font-mayo-sans);
 	letter-spacing: -1.8px;
 	margin-top: 22px;
 }
@@ -654,10 +652,7 @@ footer > a:last-child {
 	color: #577183;
 }
 .user-question {
-	font:
-		400 29px/1.25 Arial,
-		Helvetica,
-		sans-serif;
+	font: 400 29px/1.25 var(--font-mayo-sans);
 	letter-spacing: -0.5px;
 	padding-bottom: 25px;
 	max-width: 900px;
@@ -669,10 +664,7 @@ footer > a:last-child {
 }
 .answer-main h2,
 .unmatched h2 {
-	font:
-		400 40px/1.12 Arial,
-		Helvetica,
-		sans-serif;
+	font: 400 40px/1.12 var(--font-mayo-sans);
 	letter-spacing: -1px;
 	margin: 14px 0 18px;
 }
@@ -729,10 +721,7 @@ footer > a:last-child {
 	color: #637c8e;
 }
 .related h3 {
-	font:
-		400 22px/1.2 Arial,
-		Helvetica,
-		sans-serif;
+	font: 400 22px/1.2 var(--font-mayo-sans);
 	margin: 9px 0 18px;
 }
 .related > a > svg {
@@ -833,10 +822,7 @@ footer > a:last-child {
 	margin: 20px 0;
 }
 .brief h3 {
-	font:
-		400 22px Arial,
-		Helvetica,
-		sans-serif;
+	font: 400 22px var(--font-mayo-sans);
 	margin: 12px 0;
 }
 .brief p {
@@ -1443,7 +1429,7 @@ html {
 h1,
 h2,
 h3 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-mayo-sans);
 }
 em {
 	font-style: normal;
@@ -1713,10 +1699,7 @@ em {
 	color: #b4d3f7;
 }
 .user-question {
-	font:
-		400 23px/1.4 Arial,
-		Helvetica,
-		sans-serif;
+	font: 400 23px/1.4 var(--font-mayo-sans);
 	letter-spacing: -0.4px;
 	color: #b4d5ff;
 	border-bottom: 1px solid #a7caff2e;
@@ -1770,10 +1753,7 @@ em {
 	color: #b7d3f6;
 }
 .related h3 {
-	font:
-		500 21px/1.2 Arial,
-		Helvetica,
-		sans-serif;
+	font: 500 21px/1.2 var(--font-mayo-sans);
 	letter-spacing: -0.6px;
 	color: white;
 }
@@ -1793,7 +1773,7 @@ em {
 	color: var(--ink);
 }
 .brief h3 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-mayo-sans);
 	font-weight: 500;
 }
 .follow-answer {
