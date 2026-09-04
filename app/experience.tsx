@@ -127,6 +127,8 @@ export default function Experience() {
 	const discoverPanel = useRef<HTMLDivElement>(null);
 	const wheelIntent = useRef({ total: 0, time: 0 });
 	const touchStart = useRef<number | null>(null);
+	const gestureLocked = useRef(false);
+	const transitionNumber = useRef(0);
 	const textarea = useRef<HTMLTextAreaElement>(null);
 	const request = useRef(0);
 	function switchMode(
@@ -134,18 +136,23 @@ export default function Experience() {
 		anchor?: string,
 		focusContent = true,
 	) {
+		gestureLocked.current = true;
+		const transition = ++transitionNumber.current;
+		setTimeout(() => {
+			if (transitionNumber.current === transition)
+				gestureLocked.current = false;
+		}, 850);
+		touchStart.current = null;
 		setMode(next);
 		setMobile(false);
 		wheelIntent.current = { total: 0, time: 0 };
 		requestAnimationFrame(() =>
 			requestAnimationFrame(() => {
 				if (anchor) {
-					document
-						.getElementById(anchor)
-						?.scrollIntoView({
-							block: 'start',
-							behavior: 'instant',
-						});
+					document.getElementById(anchor)?.scrollIntoView({
+						block: 'start',
+						behavior: 'instant',
+					});
 				}
 				if (focusContent) {
 					if (next === 'ask') {
@@ -168,6 +175,7 @@ export default function Experience() {
 	function wheelToDiscover(e: React.WheelEvent<HTMLDivElement>) {
 		if (
 			active ||
+			gestureLocked.current ||
 			mode !== 'ask' ||
 			e.ctrlKey ||
 			Math.abs(e.deltaX) > Math.abs(e.deltaY) ||
@@ -188,6 +196,44 @@ export default function Experience() {
 		wheelIntent.current.time = now;
 		wheelIntent.current.total += Math.max(0, delta);
 		if (wheelIntent.current.total > 150) switchMode('discover');
+	}
+
+	function atDiscoverStart() {
+		return !!discoverPanel.current && discoverPanel.current.scrollTop <= 4;
+	}
+	function returnToAsk() {
+		switchMode('ask', undefined, false);
+		requestAnimationFrame(() =>
+			requestAnimationFrame(() => {
+				askPanel.current?.scrollTo({ top: 0, behavior: 'instant' });
+				askPanel.current?.focus({ preventScroll: true });
+			}),
+		);
+	}
+	function wheelToAsk(e: React.WheelEvent<HTMLDivElement>) {
+		if (
+			gestureLocked.current ||
+			mode !== 'discover' ||
+			e.ctrlKey ||
+			Math.abs(e.deltaX) > Math.abs(e.deltaY) ||
+			(e.target as HTMLElement).closest('textarea,input,select') ||
+			!atDiscoverStart()
+		) {
+			wheelIntent.current = { total: 0, time: 0 };
+			return;
+		}
+		const delta =
+			-e.deltaY *
+			(e.deltaMode === 1
+				? 16
+				: e.deltaMode === 2
+					? window.innerHeight
+					: 1);
+		if (delta <= 0 || e.timeStamp - wheelIntent.current.time > 220)
+			wheelIntent.current.total = 0;
+		wheelIntent.current.time = e.timeStamp;
+		wheelIntent.current.total += Math.max(0, delta);
+		if (wheelIntent.current.total > 150) returnToAsk();
 	}
 
 	const active = question.length > 0;
@@ -341,6 +387,7 @@ export default function Experience() {
 					onTouchEnd={(e) => {
 						if (
 							!active &&
+							!gestureLocked.current &&
 							touchStart.current !== null &&
 							touchStart.current - e.changedTouches[0].clientY >
 								90 &&
@@ -705,11 +752,41 @@ export default function Experience() {
 					keepMounted
 					ref={discoverPanel}
 					className="experience-panel discover-panel"
+					onWheel={wheelToAsk}
+					onTouchStart={(e) => {
+						touchStart.current =
+							!gestureLocked.current &&
+							atDiscoverStart() &&
+							e.touches.length === 1 &&
+							!(e.target as HTMLElement).closest(
+								'textarea,input,select',
+							)
+								? e.touches[0].clientY
+								: null;
+					}}
+					onTouchEnd={(e) => {
+						if (
+							!gestureLocked.current &&
+							mode === 'discover' &&
+							touchStart.current !== null &&
+							e.changedTouches[0].clientY - touchStart.current >
+								90 &&
+							atDiscoverStart()
+						)
+							returnToAsk();
+						touchStart.current = null;
+					}}
+					onTouchCancel={() => {
+						touchStart.current = null;
+					}}
 				>
 					<section
 						className="possibilities content-section"
 						id="possibilities"
 					>
+						<p className="discover-return-hint">
+							<ArrowUp size={14} /> Scroll up to return to Ask
+						</p>
 						<div className="section-heading">
 							<div>
 								<span className="eyebrow">

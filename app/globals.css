@@ -2019,3 +2019,19 @@ em {
 		transition: none;
 	}
 }
+
+.discover-return-hint {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 7px;
+	color: #536d87;
+	font-size: 12px;
+	margin: -20px 0 24px;
+}
+@media (max-width: 760px) {
+	.discover-return-hint {
+		justify-content: flex-start;
+		margin: -10px 0 22px;
+	}
+}
