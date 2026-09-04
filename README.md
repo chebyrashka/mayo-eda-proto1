@@ -1,6 +1,6 @@
 # Mayo Clinic Platform — Explore
 
-Private concept prototype combining a nearly full-height ask experience with an editorial browsing experience. Features three curated exploration paths, context from resource cards, source links, follow-up prompts, and a sample project brief.
+Private concept prototype combining two full-screen modes: a blue Ask workspace and a white Discover experience. A persistent keyboard-accessible mode switch connects them with a sliding transition. An intentional downward scroll or upward swipe at the opening Ask boundary also enters Discover; active conversations require an explicit mode switch. Each pane retains its scroll position and conversation state while switching. Motion respects reduced-motion preferences. Features three curated exploration paths, context from resource cards, source links, follow-up prompts, and a sample project brief.
 
 This is a design exploration, not an official Mayo Clinic service. All responses are deterministic curated samples; there is no model, patient data integration, or message submission. In-memory state resets on reload. Asset and content sources are recorded in ASSETS.md.
 
