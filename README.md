@@ -10,7 +10,9 @@ Node 22.13+ is required. Run `npm install`, then `npm run dev`. Run `npm run bui
 
 ## Deployment
 
-The project is prepared for a private Sites deployment. `.openai/hosting.json` contains its project identifier. Production output is generated under `dist/`. Package with the Sites hosting helper and deploy privately. Public launch and any real Mayo affiliation require a separate product decision. Netlify deployment would require adapting the generated Workers-specific Vite configuration.
+Netlify deployment is configured in `netlify.toml`: Node 22.17.1, `npm run build`, and publish directory `dist/client`. Netlify builds export static HTML and browser assets; the Ask and Discover interactions run in the browser. No server functions or Next.js adapter are required. To reproduce this build locally, run `NETLIFY=true npm run build`. Connect the repository's `main` branch for automatic deployment on push.
+
+The existing Sites build remains available with `npm run build` when `NETLIFY` is unset. `.openai/hosting.json` contains its project identifier, and the Workers output is generated under `dist/`. Package with the Sites hosting helper and deploy privately.
 
 ## Environment
 
