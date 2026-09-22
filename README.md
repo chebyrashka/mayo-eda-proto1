@@ -4,6 +4,8 @@ Private concept prototype combining two full-screen modes: a blue Ask workspace 
 
 This is a design exploration, not an official Mayo Clinic service. All responses are deterministic curated samples; there is no model, patient data integration, or message submission. In-memory state resets on reload. Asset and content sources are recorded in ASSETS.md.
 
+The Ask background uses the supplied northern-lights footage, optimized with an end-to-start crossfade and played at half speed, at 0.5 opacity with a blue overlay. Playback pauses in Discover and in hidden browser tabs. Reduced-motion preferences prevent the video from loading and retain the static blue gradient; the gradient also serves as a loading or playback-failure fallback. The video is served locally from `public/ambient-aurora.mp4`. Adjust `defaultPlaybackRate` and `playbackRate` in `app/ambient-background.tsx` to change its speed (currently `0.5`).
+
 ## Develop
 
 Node 22.13+ is required. Run `npm install`, then `npm run dev`. Run `npm run build` for production and `npm run lint` for static checks. The Sites starter uses React/Vinext and plain CSS; no additional application dependencies were added.

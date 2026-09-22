@@ -1408,18 +1408,36 @@ html {
 		),
 		linear-gradient(135deg, #00265d 15%, #003c89 100%);
 }
-.ambient:after {
-	width: 1100px;
-	height: 1100px;
-	left: calc(50% - 550px);
-	top: 26%;
-	border: 1px solid #8ecbff19;
-	border-radius: 50%;
-	transform: none;
-	box-shadow:
-		0 0 0 120px #83c7ff08,
-		0 0 0 240px #83c7ff05;
+.ambient {
 	pointer-events: none;
+}
+.ambient:after {
+	inset: 0;
+	width: auto;
+	height: auto;
+	border: 0;
+	border-radius: 0;
+	transform: none;
+	box-shadow: none;
+	background: linear-gradient(180deg, #002960aa, #00296026 35%, #00265d40);
+	pointer-events: none;
+}
+.ambient-video {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	inset: 0;
+	object-fit: cover;
+	opacity: 0;
+	transition: opacity 1.2s ease;
+}
+.ambient-video.is-ready {
+	opacity: 0.5;
+}
+@media (prefers-reduced-motion: reduce) {
+	.ambient-video {
+		display: none;
+	}
 }
 .section-coordinate {
 	color: #a7c5e9;

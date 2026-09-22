@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element -- Local static assets; this Workers prototype has no image optimization service. */
 'use client';
 import { useState, useRef } from 'react';
+import AmbientBackground from './ambient-background';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Textarea } from '@/components/ui/textarea';
 import {
@@ -401,7 +402,7 @@ export default function Experience() {
 						className={'ask-section ' + (active ? 'is-active' : '')}
 						id="ask"
 					>
-						<div className="ambient" aria-hidden="true" />
+						<AmbientBackground active={mode === 'ask'} />
 						<div className="section-coordinate">
 							<span>01 — ASK</span>
 							<span>YOUR AMBITION. OUR SHARED POSSIBILITY.</span>
