@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import AmbientBackground from './ambient-background';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
 import {
 	ArrowUp,
 	ArrowUpRight,
@@ -19,6 +20,7 @@ import {
 	Menu,
 	MessageSquare,
 	Compass,
+	Headset,
 } from 'lucide-react';
 
 const base = 'https://www.mayoclinicplatform.org';
@@ -329,8 +331,8 @@ export default function Experience() {
 					<img
 						src="/logo.svg"
 						alt="Mayo Clinic Platform"
-						width="190"
-						height="42"
+						width="285"
+						height="38"
 					/>
 				</button>
 				<span className="mode-caption">
@@ -358,9 +360,22 @@ export default function Experience() {
 					</a>
 				</nav>
 				<div className="header-right">
-					<span className="concept">
-						<span /> CONCEPT
-					</span>
+					<Button
+						variant="ghost"
+						className="support-button"
+						nativeButton={false}
+						render={
+							<a
+								href={base + '/contact/'}
+								aria-label="Get Support"
+								target="_blank"
+								rel="noreferrer"
+							/>
+						}
+					>
+						<Headset size={16} aria-hidden="true" />
+						<span className="support-label">Get Support</span>
+					</Button>
 					<button
 						className="menu"
 						onClick={() => setMobile(!mobile)}
@@ -404,26 +419,19 @@ export default function Experience() {
 					>
 						<AmbientBackground active={mode === 'ask'} />
 						<div className="section-coordinate">
-							<span>01 — ASK</span>
-							<span>YOUR AMBITION. OUR SHARED POSSIBILITY.</span>
+							<MessageSquare size={15} aria-hidden="true" />
+							<span>START WITH A QUESTION</span>
 						</div>
 						<div className={active ? 'ask-workspace' : 'ask-intro'}>
 							{!active ? (
 								<>
-									<div className="eyebrow">
-										<span className="spark-icon">
-											<Sparkles size={15} />
-										</span>{' '}
-										A BETTER FUTURE STARTS WITH A QUESTION
-									</div>
 									<h1>
-										Think bigger.
+										Your next question.
 										<br />
-										Ask <em>what if.</em>
+										The data to <em>explore it.</em>
 									</h1>
 									<p className="intro-copy">
-										What would you change about healthcare?
-										Let’s start there.
+										Find the data you need to answer your next question.
 									</p>
 								</>
 							) : (
@@ -661,7 +669,7 @@ export default function Experience() {
 									placeholder={
 										active
 											? 'Ask a follow-up, or take a new direction…'
-											: 'What would you like to make possible?'
+											: 'What condition, population, or data are you exploring?'
 									}
 									rows={active ? 1 : 2}
 									maxLength={1500}
@@ -727,10 +735,6 @@ export default function Experience() {
 									</div>
 								</div>
 							)}
-							<p className="demo-note">
-								Interactive concept · Curated sample responses ·
-								Please don’t enter patient information.
-							</p>
 						</div>
 						<button
 							className="experience-portal"
@@ -790,9 +794,7 @@ export default function Experience() {
 						</p>
 						<div className="section-heading">
 							<div>
-								<span className="eyebrow">
-									02 — DISCOVER THE PLATFORM
-								</span>
+								<span className="eyebrow">DISCOVER</span>
 								<h2>
 									Big ideas.
 									<br />
@@ -988,8 +990,8 @@ export default function Experience() {
 							<img
 								src="/logo.svg"
 								alt="Mayo Clinic Platform"
-								width="190"
-								height="42"
+								width="285"
+								height="38"
 							/>
 						</button>
 						<p>
