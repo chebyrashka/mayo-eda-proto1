@@ -2,6 +2,7 @@
 'use client';
 import { useState, useRef } from 'react';
 import AmbientBackground from './ambient-background';
+import { useBrand } from '@/branding/use-brand';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -23,17 +24,14 @@ import {
 	Headset,
 } from 'lucide-react';
 
-const base = 'https://www.mayoclinicplatform.org';
-const resources = [
+const resourceContent = [
 	{
 		id: 'discovery',
 		label: 'DISCOVERY',
 		title: 'A stronger foundation for your next discovery.',
 		description:
 			'Explore de-identified clinical data and research capabilities to put your ideas to the test.',
-		url: base + '/our-platform/discovery/',
-		image: '/research.jpg',
-		alt: 'Mayo Clinic researcher studying a wall of clinical data',
+		imageKey: 'research',
 		prompt: 'How can I access clinical data for research?',
 	},
 	{
@@ -42,9 +40,7 @@ const resources = [
 		title: 'Build with clinical insight from the beginning.',
 		description:
 			'Bring clinical expertise into the process of developing your digital health solution.',
-		url: base + '/our-platform/development/',
-		image: '/clinician.jpg',
-		alt: 'Clinician examining information on a screen',
+		imageKey: 'clinician',
 		prompt: 'How can I build and validate a healthcare AI solution?',
 	},
 	{
@@ -53,17 +49,14 @@ const resources = [
 		title: 'Move from a promising pilot to everyday care.',
 		description:
 			'Explore how solutions connect with clinical workflows and care delivery systems.',
-		url: base + '/our-platform/deployment/',
-		image: null,
-		alt: '',
+		imageKey: null,
 		prompt: 'How can I bring AI into our clinical workflows?',
 	},
-];
+] as const;
 const paths = {
 	discovery: {
 		eyebrow: 'FROM QUESTION TO EVIDENCE',
 		title: 'Let’s give your idea a foundation.',
-		body: 'Start by defining the question you want to answer. Mayo Clinic Platform’s discovery capabilities connect research with curated, de-identified clinical data and feasibility support.',
 		steps: [
 			'Define your research question',
 			'Explore relevant data and feasibility',
@@ -78,7 +71,6 @@ const paths = {
 	development: {
 		eyebrow: 'FROM IDEA TO CLINICAL VALUE',
 		title: 'A path from possibility to practice.',
-		body: 'Building a healthcare AI solution takes clinical insight as well as technical development. Explore a pathway that brings evidence, clinicians, and the intended care setting into the process.',
 		steps: [
 			'Establish the clinical use case',
 			'Develop and validate with clinical input',
@@ -93,7 +85,6 @@ const paths = {
 	deployment: {
 		eyebrow: 'FROM PILOT TO PRACTICE',
 		title: 'Make innovation part of everyday care.',
-		body: 'Start with the workflow you want to improve. Mayo Clinic Platform’s deployment resources describe integration, interoperability, and the practical requirements of bringing a solution into a care setting.',
 		steps: [
 			'Map the workflow and intended benefit',
 			'Assess integration and operational readiness',
@@ -116,6 +107,16 @@ function detect(q: string): PathKey | null {
 	return null;
 }
 export default function Experience() {
+	const brand = useBrand();
+	const resources = resourceContent.map((resource) => {
+		const photo = resource.imageKey ? brand.images[resource.imageKey] : null;
+		return {
+			...resource,
+			url: brand.links[resource.id],
+			image: photo?.src ?? null,
+			alt: photo?.alt ?? '',
+		};
+	});
 	const [input, setInput] = useState('');
 	const [question, setQuestion] = useState('');
 	const [path, setPath] = useState<PathKey | null>(null);
@@ -240,7 +241,7 @@ export default function Experience() {
 	}
 
 	const active = question.length > 0;
-	const result = path ? paths[path] : null;
+	const result = path ? { ...paths[path], body: brand.chat.responses[path] } : null;
 	function ask(q: string) {
 		q = q.trim();
 		if (!q || busy) return;
@@ -311,6 +312,7 @@ export default function Experience() {
 			}
 			className="experience-shell"
 			data-mode={mode}
+			data-brand={brand.name}
 		>
 			<a
 				className="skip"
@@ -326,13 +328,13 @@ export default function Experience() {
 				<button
 					onClick={() => switchMode('ask')}
 					className="brand"
-					aria-label="Mayo Clinic Platform home"
+					aria-label={brand.logo.alt + ' home'}
 				>
 					<img
-						src="/logo.svg"
-						alt="Mayo Clinic Platform"
-						width="285"
-						height="38"
+						src={brand.logo.src}
+						alt={brand.logo.alt}
+						width={brand.logo.width}
+						height={brand.logo.height}
 					/>
 				</button>
 				<span className="mode-caption">
@@ -355,7 +357,7 @@ export default function Experience() {
 					<button onClick={() => switchMode('discover', 'resources')}>
 						Resources
 					</button>
-					<a href={base + '/about/'} target="_blank" rel="noreferrer">
+					<a {...brand.linkProps(brand.links.about)}>
 						About us <ArrowUpRight size={13} />
 					</a>
 				</nav>
@@ -366,10 +368,8 @@ export default function Experience() {
 						nativeButton={false}
 						render={
 							<a
-								href={base + '/contact/'}
+								{...brand.linkProps(brand.links.contact)}
 								aria-label="Get Support"
-								target="_blank"
-								rel="noreferrer"
 							/>
 						}
 					>
@@ -524,12 +524,9 @@ export default function Experience() {
 															team.
 														</p>
 														<a
-															href={
-																base +
-																'/contact/'
-															}
-															target="_blank"
-															rel="noreferrer"
+															{...brand.linkProps(
+																brand.links.contact,
+															)}
 														>
 															Continue with the
 															Platform team{' '}
@@ -563,9 +560,7 @@ export default function Experience() {
 													)!;
 													return (
 														<a
-															href={r.url}
-															target="_blank"
-															rel="noreferrer"
+															{...brand.linkProps(r.url)}
 															key={id}
 														>
 															<span>
@@ -576,9 +571,7 @@ export default function Experience() {
 																size={19}
 															/>
 															<small>
-																View source on
-																Mayo Clinic
-																Platform
+																{brand.chat.sourceLabel}
 															</small>
 														</a>
 													);
@@ -595,14 +588,7 @@ export default function Experience() {
 												Let’s find the right starting
 												point.
 											</h2>
-											<p>
-												This concept explores Mayo
-												Clinic Platform’s work in
-												healthcare innovation. Choose a
-												direction below, or tell me
-												about your data, solution, or
-												clinical workflow.
-											</p>
+											<p>{brand.chat.fallback}</p>
 											<div className="followups">
 												{resources.map((r) => (
 													<button
@@ -809,8 +795,8 @@ export default function Experience() {
 						</div>
 						<div className="feature-panel">
 							<img
-								src="/research.jpg"
-								alt="A clinician explores data to support healthcare research"
+								src={brand.images.research.src}
+								alt={brand.images.research.featureAlt}
 								loading="lazy"
 							/>
 							<div className="feature-copy">
@@ -908,9 +894,7 @@ export default function Experience() {
 									>
 										{r.image ? (
 											<a
-												href={r.url}
-												target="_blank"
-												rel="noreferrer"
+												{...brand.linkProps(r.url)}
 												className="card-image"
 											>
 												<img
@@ -942,9 +926,7 @@ export default function Experience() {
 											</span>
 											<h3>
 												<a
-													href={r.url}
-													target="_blank"
-													rel="noreferrer"
+													{...brand.linkProps(r.url)}
 												>
 													{r.title}
 												</a>
@@ -970,8 +952,8 @@ export default function Experience() {
 						</div>
 					</section>
 					<section className="closing">
-						<span className="eyebrow">
-							THE NEEDS OF THE PATIENT COME FIRST.
+						<span className="eyebrow" lang={brand.closing.lang}>
+							{brand.closing.text}
 						</span>
 						<h2>
 							What will we make
@@ -988,20 +970,19 @@ export default function Experience() {
 							className="brand"
 						>
 							<img
-								src="/logo.svg"
-								alt="Mayo Clinic Platform"
-								width="285"
-								height="38"
+								src={brand.logo.src}
+								alt={brand.logo.alt}
+								width={brand.logo.width}
+								height={brand.logo.height}
 							/>
 						</button>
-						<p>
-							A design exploration. Not an official Mayo Clinic
-							service.
-						</p>
-						<a href={base} target="_blank" rel="noreferrer">
-							Visit Mayo Clinic Platform{' '}
-							<ArrowUpRight size={14} />
-						</a>
+						<p>{brand.footer.disclaimer}</p>
+						{brand.footer.visit && (
+							<a {...brand.linkProps(brand.footer.visit.url)}>
+								{brand.footer.visit.label}{' '}
+								<ArrowUpRight size={14} />
+							</a>
+						)}
 					</footer>
 				</TabsContent>
 			</main>

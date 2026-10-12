@@ -1,0 +1,22 @@
+Alternative photography — generated October 12, 2026
+Method: built-in image_gen tool, new generation, no image inputs, opaque background.
+
+RESEARCH
+Output: public/branding/alternative/images/research.jpg
+
+Use case: photorealistic-natural.
+Asset type: wide editorial photograph for a clinical research website, used both behind a left-side blue text overlay and in a smaller landscape resource card.
+Primary request: Create a completely new, realistic healthcare research photograph with the polished, candid feel of institutional medical photography. A fictional female medical data scientist with short dark curly hair and understated thin-frame glasses, wearing an unbranded white lab coat, studies a large illuminated scientific visualization wall in a modern research room. She looks toward the display, not at the camera. Show abstract multicolor microscopy or cell-imaging patterns on the screens: restrained turquoise, cobalt, warm amber and small magenta accents, no readable patient data.
+Composition/framing: horizontal 2:1 landscape, ideally 2048 x 1024. The researcher is on the right third, her face near 68 percent of the frame width, fully within the image with space above her head. The display fills the left half and recedes naturally in perspective. Medium close-up, shoulders visible, natural believable pose. Keep the left side visually simple enough for the website's existing gradient overlay. Frame to work with a centered crop and a mobile crop focused around 64 percent width. Single continuous photograph.
+Lighting/mood: soft cool blue ambient laboratory light, natural warm skin, gentle screen reflections on her glasses, thoughtful focus and quiet confidence. Real skin texture, fine hair detail, convincing glass and fabric, mild depth of field, professional editorial camera photograph.
+Constraints: an original fictional person and new environment; no Mayo Clinic or other logos, no badges, no signage, no text or watermark, no typography, no collage, no artificial holograms, no exaggerated futuristic interfaces, no patient-identifying details. No website UI or blue overlay baked into the photograph.
+
+CLINICIAN
+Output: public/branding/alternative/images/clinician.jpg
+
+Use case: photorealistic-natural.
+Asset type: wide editorial photograph for a clinical innovation website resource card; companion to a cool blue clinical research photograph.
+Primary request: Create a completely new, realistic photograph of a fictional mid-career male clinical researcher with short dark hair lightly graying at the temples and subtle stubble, wearing fine dark-frame glasses and an unbranded white lab coat over a muted teal shirt. He is thoughtfully examining an off-camera computer monitor to the right in a bright contemporary medical research office. A second colleague in a white lab coat is softly out of focus behind him at another workstation. Natural candid professional moment, no one looking at the camera.
+Composition/framing: horizontal 2:1 landscape, ideally 2048 x 1024. Close portrait from a slight three-quarter angle, principal face centered around 43 percent of frame width, complete head with modest headroom, shoulders visible, with soft blurred workspace extending to the right. Protect the main face for a centered landscape card crop. Single continuous photograph.
+Lighting/mood: soft window daylight blended with restrained blue monitor light, neutral white and blue-gray surroundings, natural skin color, subtle abstract blue and teal screen reflections in the glasses. Quiet concentration, credible healthcare innovation, shallow depth of field, realistic pores, fine hair and fabric texture, polished but authentic editorial photography. Tonally coherent with a cool blue scientific laboratory image.
+Constraints: original fictional people and environment; no Mayo Clinic or other logos, no badges or institutional insignia, no signage, no readable text, no patient details, no watermark, no collage, no artificial holograms or exaggerated futuristic interface. No website UI or graphic overlays baked in.

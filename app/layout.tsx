@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
+import { brands, DEFAULT_BRAND } from '@/branding/brands';
 import './globals.css';
+const brandMetadata = brands[DEFAULT_BRAND].metadata;
 export const metadata: Metadata = {
-  title: 'Explore what’s possible | Mayo Clinic Platform',
-  description: 'A concept experience for exploring healthcare innovation through conversation and curated Mayo Clinic Platform resources.',
+  title: brandMetadata.title,
+  description: brandMetadata.description,
+  icons: { icon: { url: brandMetadata.favicon, type: 'image/svg+xml', sizes: 'any' } },
   robots: { index: false, follow: false },
 };
 export default function RootLayout({children}: {children: React.ReactNode}) {

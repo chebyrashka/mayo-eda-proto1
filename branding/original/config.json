@@ -1,0 +1,52 @@
+{
+  "placeholderLinks": false,
+  "logo": {
+    "src": "/logo.svg",
+    "alt": "Mayo Clinic Platform",
+    "width": 285,
+    "height": 38
+  },
+  "images": {
+    "research": {
+      "src": "/research.jpg",
+      "alt": "Mayo Clinic researcher studying a wall of clinical data",
+      "featureAlt": "A clinician explores data to support healthcare research"
+    },
+    "clinician": {
+      "src": "/clinician.jpg",
+      "alt": "Clinician examining information on a screen"
+    }
+  },
+  "footer": {
+    "disclaimer": "A design exploration. Not an official Mayo Clinic service.",
+    "visit": {
+      "label": "Visit Mayo Clinic Platform",
+      "url": "https://www.mayoclinicplatform.org"
+    }
+  },
+  "metadata": {
+    "title": "Explore what’s possible | Mayo Clinic Platform",
+    "description": "A concept experience for exploring healthcare innovation through conversation and curated Mayo Clinic Platform resources.",
+    "favicon": "/branding/original/favicon.svg"
+  },
+  "chat": {
+    "responses": {
+      "discovery": "Start by defining the question you want to answer. Mayo Clinic Platform’s discovery capabilities connect research with curated, de-identified clinical data and feasibility support.",
+      "development": "Building a healthcare AI solution takes clinical insight as well as technical development. Explore a pathway that brings evidence, clinicians, and the intended care setting into the process.",
+      "deployment": "Start with the workflow you want to improve. Mayo Clinic Platform’s deployment resources describe integration, interoperability, and the practical requirements of bringing a solution into a care setting."
+    },
+    "fallback": "This concept explores Mayo Clinic Platform’s work in healthcare innovation. Choose a direction below, or tell me about your data, solution, or clinical workflow.",
+    "sourceLabel": "View source on Mayo Clinic Platform"
+  },
+  "closing": {
+    "text": "THE NEEDS OF THE PATIENT COME FIRST.",
+    "lang": "en"
+  },
+  "links": {
+    "about": "https://www.mayoclinicplatform.org/about/",
+    "contact": "https://www.mayoclinicplatform.org/contact/",
+    "discovery": "https://www.mayoclinicplatform.org/our-platform/discovery/",
+    "development": "https://www.mayoclinicplatform.org/our-platform/development/",
+    "deployment": "https://www.mayoclinicplatform.org/our-platform/deployment/"
+  }
+}

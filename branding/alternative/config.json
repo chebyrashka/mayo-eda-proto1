@@ -1,0 +1,49 @@
+{
+  "placeholderLinks": true,
+  "logo": {
+    "src": "/branding/alternative/logo-examplehealth.svg",
+    "alt": "Example Health",
+    "width": 636,
+    "height": 115
+  },
+  "images": {
+    "research": {
+      "src": "/branding/alternative/images/research-v2.jpg",
+      "alt": "Researcher studying illuminated scientific visualizations in a clinical research lab",
+      "featureAlt": "Researcher exploring scientific imaging on a large display"
+    },
+    "clinician": {
+      "src": "/branding/alternative/images/clinician.jpg",
+      "alt": "Clinician examining a computer monitor with a colleague working in the background"
+    }
+  },
+  "footer": {
+    "disclaimer": "A design exploration. Not an official service.",
+    "visit": null
+  },
+  "metadata": {
+    "title": "Explore what’s possible | Example Health",
+    "description": "A concept experience for exploring healthcare innovation through conversation and curated Example Health Platform resources.",
+    "favicon": "/branding/alternative/favicon.svg"
+  },
+  "chat": {
+    "responses": {
+      "discovery": "Start by defining the question you want to answer. Example Health Platform’s discovery capabilities connect research with curated, de-identified clinical data and feasibility support.",
+      "development": "Building a healthcare AI solution takes clinical insight as well as technical development. Explore a pathway that brings evidence, clinicians, and the intended care setting into the process.",
+      "deployment": "Start with the workflow you want to improve. Example Health Platform’s deployment resources describe integration, interoperability, and the practical requirements of bringing a solution into a care setting."
+    },
+    "fallback": "This concept explores Example Health Platform’s work in healthcare innovation. Choose a direction below, or tell me about your data, solution, or clinical workflow.",
+    "sourceLabel": "View source on Example Health Platform"
+  },
+  "closing": {
+    "text": "Patientens behov kommer först.",
+    "lang": "sv"
+  },
+  "links": {
+    "about": "#",
+    "contact": "#",
+    "discovery": "#",
+    "development": "#",
+    "deployment": "#"
+  }
+}

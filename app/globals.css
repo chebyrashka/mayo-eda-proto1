@@ -1,13 +1,14 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
+@import '../branding/alternative/fonts.css';
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
 	--color-primary: var(--primary);
 	--color-primary-foreground: var(--primary-foreground);
 	--color-border: var(--border);
-	--font-sans: Arial, Helvetica, sans-serif;
+	--font-sans: var(--brand-font, Arial, Helvetica, sans-serif);
 }
 :root {
 	-webkit-font-smoothing: antialiased;
@@ -37,7 +38,7 @@ html {
 body {
 	margin: 0;
 	color: var(--ink);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--brand-font, Arial, Helvetica, sans-serif);
 	font-size: 16px;
 	line-height: 1.5;
 }
@@ -115,8 +116,9 @@ button:hover:not(:disabled) {
 	min-width: 0;
 }
 .brand img {
-	width: 285px;
-	height: auto;
+	/* Match the original logo's height while preserving each SVG's aspect ratio. */
+	width: auto;
+	height: 38px;
 	object-fit: contain;
 }
 .navigation {
@@ -266,7 +268,7 @@ p {
 	margin: 0;
 }
 h1 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--brand-font, Arial, Helvetica, sans-serif);
 	font-weight: 400;
 	font-size: clamp(45px, 4.6vw, 72px);
 	line-height: 1.1;
@@ -407,7 +409,7 @@ em {
 	margin-bottom: 45px;
 }
 .section-heading h2 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--brand-font, Arial, Helvetica, sans-serif);
 	font-weight: 400;
 	font-size: clamp(36px, 3.4vw, 51px);
 	line-height: 1.13;
@@ -461,7 +463,7 @@ em {
 }
 .feature-copy h3 {
 	font-size: 39px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--brand-font, Arial, Helvetica, sans-serif);
 	line-height: 1.15;
 	font-weight: 400;
 	letter-spacing: -1px;
@@ -564,7 +566,7 @@ em {
 	color: var(--blue);
 }
 .card-body h3 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--brand-font, Arial, Helvetica, sans-serif);
 	font-size: 27px;
 	font-weight: 400;
 	line-height: 1.22;
@@ -632,9 +634,7 @@ em {
 }
 .closing h2 {
 	font:
-		400 55px/1.08 Arial,
-		Helvetica,
-		sans-serif;
+		400 55px/1.08 var(--brand-font, Arial, Helvetica, sans-serif);
 	letter-spacing: -1.8px;
 	margin-top: 22px;
 }
@@ -649,7 +649,7 @@ footer {
 	justify-content: space-between;
 }
 footer .brand img {
-	width: 200px;
+	height: calc(200px * 28 / 210);
 }
 footer p {
 	font-size: 11px;
@@ -681,9 +681,7 @@ footer > a:last-child {
 }
 .user-question {
 	font:
-		400 29px/1.25 Arial,
-		Helvetica,
-		sans-serif;
+		400 29px/1.25 var(--brand-font, Arial, Helvetica, sans-serif);
 	letter-spacing: -0.5px;
 	padding-bottom: 25px;
 	max-width: 900px;
@@ -696,9 +694,7 @@ footer > a:last-child {
 .answer-main h2,
 .unmatched h2 {
 	font:
-		400 40px/1.12 Arial,
-		Helvetica,
-		sans-serif;
+		400 40px/1.12 var(--brand-font, Arial, Helvetica, sans-serif);
 	letter-spacing: -1px;
 	margin: 14px 0 18px;
 }
@@ -756,9 +752,7 @@ footer > a:last-child {
 }
 .related h3 {
 	font:
-		400 22px/1.2 Arial,
-		Helvetica,
-		sans-serif;
+		400 22px/1.2 var(--brand-font, Arial, Helvetica, sans-serif);
 	margin: 9px 0 18px;
 }
 .related > a > svg {
@@ -857,9 +851,7 @@ footer > a:last-child {
 }
 .brief h3 {
 	font:
-		400 22px Arial,
-		Helvetica,
-		sans-serif;
+		400 22px var(--brand-font, Arial, Helvetica, sans-serif);
 	margin: 12px 0;
 }
 .brief p {
@@ -951,7 +943,7 @@ footer > a:last-child {
 		gap: 12px;
 	}
 	.brand img {
-		width: 237px;
+		height: 31.6px;
 	}
 	.header-right {
 		gap: 12px;
@@ -1114,7 +1106,7 @@ footer > a:last-child {
 		gap: 20px;
 	}
 	footer .brand img {
-		width: 166px;
+		height: calc(166px * 28 / 210);
 	}
 	footer p {
 		order: 3;
@@ -1285,6 +1277,7 @@ html {
 }
 .experience-shell {
 	position: fixed;
+	font-family: var(--brand-font, Arial, Helvetica, sans-serif);
 	inset: 0;
 	display: flex;
 	flex-direction: column;
@@ -1466,7 +1459,7 @@ html {
 h1,
 h2,
 h3 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--brand-font, Arial, Helvetica, sans-serif);
 }
 em {
 	font-style: normal;
@@ -1729,9 +1722,7 @@ em {
 }
 .user-question {
 	font:
-		400 23px/1.4 Arial,
-		Helvetica,
-		sans-serif;
+		400 23px/1.4 var(--brand-font, Arial, Helvetica, sans-serif);
 	letter-spacing: -0.4px;
 	color: #b4d5ff;
 	border-bottom: 1px solid #a7caff2e;
@@ -1786,9 +1777,7 @@ em {
 }
 .related h3 {
 	font:
-		500 21px/1.2 Arial,
-		Helvetica,
-		sans-serif;
+		500 21px/1.2 var(--brand-font, Arial, Helvetica, sans-serif);
 	letter-spacing: -0.6px;
 	color: white;
 }
@@ -1808,7 +1797,7 @@ em {
 	color: var(--ink);
 }
 .brief h3 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--brand-font, Arial, Helvetica, sans-serif);
 	font-weight: 500;
 }
 .follow-answer {

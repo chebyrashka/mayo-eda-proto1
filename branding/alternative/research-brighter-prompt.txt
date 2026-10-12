@@ -1,0 +1,12 @@
+Research photograph — brighter revision, October 12, 2026
+Method: built-in image_gen editing tool; opaque background.
+Edit target: public/branding/alternative/images/research.jpg
+Color reference only: public/research.jpg
+Output: public/branding/alternative/images/research-v2.jpg
+
+Use case: lighting-weather.
+Asset type: clinical research website photograph, wide 2:1 composition.
+Input images: Image 1 is the EDIT TARGET: the alternative photo of a short-curly-haired researcher beside a visualization wall. Image 2 is a COLOR AND BRIGHTNESS REFERENCE ONLY: the original institutional research photo. Do not copy its person, face, pose, or scene.
+Request: Edit Image 1 to feel substantially brighter and more colorful, closer to Image 2's luminous cyan, warm golden-yellow, orange and vivid pink/magenta balance. The current target is too dark and almost monochromatic navy. Turn the scientific display into a richly luminous multicolor microscopy/heatmap visualization: large broad bright cyan regions, conspicuous golden amber/yellow and coral regions, and vivid magenta cellular details, retaining believable scientific imagery. Spread these colors across the whole display so they remain visible in the center of the composition and a tighter card crop. Raise the room's ambient exposure and shadow detail by roughly one stop; replace its dim gray-blue atmosphere with brighter clean cyan-blue illumination. Let the display cast a noticeable but natural soft warm amber glow on the researcher's face and lab coat, and softly colored reflections in her glasses. Keep highlights detailed, healthy natural skin tones and a convincing photographic appearance.
+Preserve: exactly the same fictional researcher, facial identity, short dark curly hair, glasses, lab coat, thoughtful gaze, pose, camera angle, composition, monitor geometry, room structure and wide 2:1 crop of Image 1. This is a change of illumination, display coloration and photographic color grading only.
+Avoid: dark moody navy grading, merely increasing blue saturation, blown-out highlights, plastic skin, surreal rainbow skin, new people or props, text, watermarks, institutional logos, badges, website overlays or a collage. The result should be visibly more vibrant and optimistic at first glance while remaining a credible editorial photograph.

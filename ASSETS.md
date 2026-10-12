@@ -1,6 +1,32 @@
 # Reference assets
 
-Mayo Clinic Platform logo and photography are used only in this private design exploration. They are not asserted to be public-domain or licensed for public redistribution.
+The original Mayo Clinic Platform logo and photography are used only in this private design exploration. They are not asserted to be public-domain or licensed for public redistribution.
+
+## Alternative typography
+
+- `public/branding/alternative/fonts/hanken-grotesk-latin-variable.woff2`: Hanken Grotesk normal-style Latin variable font, weights 100–900, downloaded from Google Fonts on October 12, 2026. Used only by the alternative brand.
+- Font source: https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpd59CxCis4.woff2
+- License source: https://github.com/google/fonts/blob/main/ofl/hankengrotesk/OFL.txt — SIL Open Font License 1.1, included as `public/branding/alternative/fonts/OFL.txt`.
+
+## Alternative logo
+
+- `public/branding/alternative/logo-examplehealth.svg`: User-supplied ExampleHealth logo, copied unchanged from `logo-examplehealth.svg`. Used in the alternative header and footer; the existing Ask header CSS inverts the dark artwork for the blue background. Intrinsic dimensions are 636 × 115; rendered dimensions follow the responsive logo styles.
+- The original brand retains `public/logo.svg`.
+
+## Favicons
+
+- `public/branding/alternative/favicon.svg`: Simple blue-circle SVG created for Example Health; also used at `public/favicon.svg` as the default fallback.
+- `public/branding/original/favicon.svg`: Preserved original blue-square M favicon, selected by the original brand.
+
+## Alternative photography
+
+- `public/branding/alternative/images/research-v2.jpg`: Active AI-generated fictional researcher studying a scientific visualization wall; used in the feature panel and Discovery card. Revised with brighter cyan, amber, and magenta display colors, more ambient light, and warmer screen illumination on the subject. The earlier darker version is preserved as `research.jpg` in the same directory.
+- `public/branding/alternative/images/clinician.jpg`: AI-generated fictional clinician working at a monitor, with a colleague in the background; used in the Development card.
+- Created October 12, 2026 with the built-in image generation tool. The initial photographs were generated from descriptive prompts with no image inputs. The second research version edits the generated alternative photo, using the original source photograph only as a brightness and color reference. These are generated scenes, not photographs of Mayo Clinic staff or facilities. JPEG copies are encoded at quality 88 for the website; generated PNGs remain in Codex's generated-images directory.
+- Exact prompts: `branding/alternative/photography-prompts.txt` (initial generation) and `branding/alternative/research-brighter-prompt.txt` (active research revision).
+- `?brand=original` continues to load the unchanged source photographs listed below.
+
+## Original references
 
 - Reference and logo: https://www.mayoclinicplatform.org/
 - Photography source: https://www.mayoclinicplatform.org/focus-areas/healthcare-providers/
