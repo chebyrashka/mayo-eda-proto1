@@ -486,6 +486,9 @@ em {
 	font-size: 14px;
 	margin-top: 27px;
 }
+.experience-shell[data-brand='alternative'] .light-button {
+	gap: 6px;
+}
 .resources {
 	padding-top: 0;
 }
