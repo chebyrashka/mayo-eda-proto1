@@ -18,6 +18,10 @@ The original Mayo Clinic Platform logo and photography are used only in this pri
 - `public/branding/alternative/favicon.svg`: Simple blue-circle SVG created for Example Health; also used at `public/favicon.svg` as the default fallback.
 - `public/branding/original/favicon.svg`: Preserved original blue-square M favicon, selected by the original brand.
 
+## Social preview
+
+- `public/branding/alternative/social-preview.jpg`: Unedited 1200 × 630 browser screenshot of the Example Health opening Ask screen, captured from `https://examplehealth.netlify.app/` on November 11, 2026. Used by Open Graph and Twitter/X sharing metadata. Contains the existing supplied logo and a frame of the site's ambient background footage.
+
 ## Alternative photography
 
 - `public/branding/alternative/images/research-v2.jpg`: Active AI-generated fictional researcher studying a scientific visualization wall; used in the feature panel and Discovery card. Revised with brighter cyan, amber, and magenta display colors, more ambient light, and warmer screen illumination on the subject. The earlier darker version is preserved as `research.jpg` in the same directory.

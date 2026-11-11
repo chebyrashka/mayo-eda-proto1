@@ -24,7 +24,18 @@
   "metadata": {
     "title": "Explore what’s possible | Example Health",
     "description": "A concept experience for exploring healthcare innovation through conversation and curated Example Health Platform resources.",
-    "favicon": "/branding/alternative/favicon.svg"
+    "favicon": "/branding/alternative/favicon.svg",
+    "social": {
+      "url": "https://examplehealth.netlify.app/",
+      "siteName": "Example Health",
+      "image": {
+        "url": "https://examplehealth.netlify.app/branding/alternative/social-preview.jpg",
+        "width": 1200,
+        "height": 630,
+        "type": "image/jpeg",
+        "alt": "Example Health home screen: Your next question. The data to explore it."
+      }
+    }
   },
   "chat": {
     "responses": {

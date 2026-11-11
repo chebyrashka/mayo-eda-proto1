@@ -26,6 +26,8 @@ The `images` settings select each brand's photography and alt text. Alternative 
 
 ## Deployment
 
+The alternative brand's `metadata.social` settings provide Open Graph and large-image Twitter/X cards in the exported HTML, so LinkedIn and other sharing crawlers can read them without JavaScript. The preview is a 1200 × 630 JPEG screenshot of the opening Ask screen at `public/branding/alternative/social-preview.jpg`. Update the screenshot when the opening screen changes, and update the absolute page/image URLs in the config if the production domain changes. Social previews use the default brand; query-string brand switching happens after hydration. After publishing a preview change, use [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) to refresh LinkedIn's cached preview.
+
 Netlify deployment is configured in `netlify.toml`: Node 22.17.1, `npm run build`, and publish directory `dist/client`. Netlify builds export static HTML and browser assets; the Ask and Discover interactions run in the browser. No server functions or Next.js adapter are required. To reproduce this build locally, run `NETLIFY=true npm run build`. Connect the repository's `main` branch for automatic deployment on push.
 
 The existing Sites build remains available with `npm run build` when `NETLIFY` is unset. `.openai/hosting.json` contains its project identifier, and the Workers output is generated under `dist/`. Package with the Sites hosting helper and deploy privately.
