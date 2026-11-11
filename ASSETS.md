@@ -20,7 +20,7 @@ The original Mayo Clinic Platform logo and photography are used only in this pri
 
 ## Social preview
 
-- `public/branding/alternative/social-preview.jpg`: Unedited 1200 × 630 browser screenshot of the Example Health opening Ask screen, captured from `https://examplehealth.netlify.app/` on November 11, 2026. Used by Open Graph and Twitter/X sharing metadata. Contains the existing supplied logo and a frame of the site's ambient background footage.
+- `public/branding/alternative/social-preview-2400.jpg`: Active, unedited 2400 × 1247 browser screenshot of the Example Health opening Ask screen, captured from `https://examplehealth.netlify.app/` on November 11, 2026. Recaptured at higher resolution rather than upscaled, and used by Open Graph and Twitter/X sharing metadata. Contains the existing supplied logo and a frame of the site's ambient background footage. The earlier 1200 × 630 capture remains at `public/branding/alternative/social-preview.jpg` for previously cached image URLs.
 
 ## Alternative photography
 

@@ -29,9 +29,9 @@
       "url": "https://examplehealth.netlify.app/",
       "siteName": "Example Health",
       "image": {
-        "url": "https://examplehealth.netlify.app/branding/alternative/social-preview.jpg",
-        "width": 1200,
-        "height": 630,
+        "url": "https://examplehealth.netlify.app/branding/alternative/social-preview-2400.jpg",
+        "width": 2400,
+        "height": 1247,
         "type": "image/jpeg",
         "alt": "Example Health home screen: Your next question. The data to explore it."
       }
